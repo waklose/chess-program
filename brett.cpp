@@ -45,6 +45,19 @@ vector<vector<string>> classic(){
     return re;
 }
 
+vector<vector<string>> test1(){
+    vector<vector<string>> re;
+    for (int i = 0; i < 8; i++){
+        vector<string> init (8, "");
+        re.push_back(init);
+    }
+    re[4][0]="wk";
+    re[0][0]="wr";
+    re[3][7]="bk";
+    re[4][1]="wr";
+    re[2][1]="wr";
+    return re;
+}
 
 void Brett::draw(){
     brettbildet.draw(10*rute, 0);
@@ -287,9 +300,9 @@ void Brett::final_move(int x, int y){
         wrr=false;
         wlr=false;
     }
-    else if ( selected_piece->x()/rute == 0)
+    else if (selected_piece->pos.x/rute == 7 && selected_piece->get_piece_code()[1]=='r' )
     {
-        if ( white_turn ){
+        if ( selected_piece->is_white() ){
             wlr=false;
         }
         else
@@ -297,9 +310,9 @@ void Brett::final_move(int x, int y){
             blr=false;
         }
     }
-    else if (selected_piece->x()/rute == 7)
+    else if (selected_piece->pos.x/rute == 0 && selected_piece->get_piece_code()[1]=='r' )
     {
-        if ( white_turn ){
+        if ( selected_piece->is_white() ){
             wrr=false;
         }
         else
@@ -307,6 +320,9 @@ void Brett::final_move(int x, int y){
             brr=false;
         }
     }
+    // cout<<"x:" <<selected_piece->x()<<" x/rute: "<<selected_piece->x()/rute<<endl;
+    // cout<<"x:" <<selected_piece->pos.x<<" x/rute: "<<selected_piece->pos.x/rute<<endl;
+    // cout<<"y:" <<selected_piece->y()<<" y/rute: "<<selected_piece->y()/rute<<endl<<endl;
     
 
     int real_brett_x=7-x/rute;
