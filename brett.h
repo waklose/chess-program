@@ -14,8 +14,6 @@
 #include <iostream>     // std::cout
 #include <iterator> 
 
-//må fikse sjakk som kan stoppes ved an passant og noe rar bonde posision
-
 
 vector<vector<string>> classic();
 
