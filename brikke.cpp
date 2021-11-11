@@ -1,6 +1,6 @@
 #include "brikke.h"
 
-//måtte gjøre masse tull her fordi disse arrayene var for inkompetente til å lage sin egen end
+//måtte gjøre masse tull her fordi disse arrayene ikke lager sin egen end
     char bp[]={'b','i','l','d','e','r','/','b','p','.','p','n','g'};
     int a=1;
     char bk[]={'b','i','l','d','e','r','/','b','k','.','p','n','g'};
